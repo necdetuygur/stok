@@ -9,6 +9,13 @@ import axios from 'axios';
 export class StokService {
   constructor() {}
   async Add(data: Stok) {
-    return (await axios.post(stokUrl, data)).data;
+    return await (
+      await axios.post(stokUrl, data)
+    ).data;
+  }
+  async All() {
+    return await (
+      await axios.get(stokUrl)
+    ).data;
   }
 }
