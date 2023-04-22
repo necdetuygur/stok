@@ -9,7 +9,6 @@
           <th>Ad</th>
           <th>Miktar</th>
           <th>Birim</th>
-          <th>Zaman</th>
         </tr>
       </thead>
       <tbody>
@@ -17,11 +16,10 @@
           <td>{{ item.Ad }}</td>
           <td>{{ item.Miktar }}</td>
           <td>{{ item.Birim }}</td>
-          <td>{{ item.Zaman | zaman }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<button class="btn btn-primary" (click)="Add()">Ekle</button>
+<button class="btn btn-primary" (click)="Ekle()">Ekle</button>

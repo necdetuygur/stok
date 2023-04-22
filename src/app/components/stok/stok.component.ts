@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Stok } from 'src/app/models/stok.model';
 import { StokService } from 'src/app/services/stok.service';
 
 @Component({
@@ -11,19 +10,11 @@ export class StokComponent {
   list: any;
   constructor(public stokService: StokService) {}
   async ngOnInit() {
-    this.list = await this.stokService.All();
+    this.list = await this.stokService.Tum();
   }
-  async Add() {
-    const data: Stok = {
-      KullaniciID: 1,
-      Ad: prompt('Ad', '') || '',
-      Miktar: 1,
-      Birim: 'Adet',
-      Zaman: new Date(),
-    };
-    const res = await this.stokService.Add(data);
+  async Ekle() {
+    const res = await this.stokService.Ekle(prompt('Ad', '') || '', 1, 'Adet');
     console.log(res);
-    //
-    this.list = await this.stokService.All();
+    this.list = await this.stokService.Tum();
   }
 }

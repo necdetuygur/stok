@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Stok } from '../models/stok.model';
-import { stokUrl } from '../api.constants';
-import axios from 'axios';
+import { STOK_URL } from '../api.constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StokService {
-  constructor() {}
-  async Add(data: Stok) {
+  async Ekle(Ad: string, Miktar: number, Birim: string) {
     return await (
-      await axios.post(stokUrl, data)
-    ).data;
+      await fetch(STOK_URL, {
+        method: 'POST',
+        headers: {
+          Authorization: localStorage.getItem('token') || '',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          Ad,
+          Miktar,
+          Birim,
+        }),
+      })
+    ).json();
   }
-  async All() {
-    return await (
-      await axios.get(stokUrl)
-    ).data;
+  async Tum() {
+    return await (await fetch(STOK_URL)).json();
   }
 }
