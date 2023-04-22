@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { KullaniciComponent } from './components/kullanici/kullanici.component';
 import { InputMaskModule } from '@ngneat/input-mask';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { InputMaskModule } from '@ngneat/input-mask';
     GirisComponent,
     HeaderComponent,
     KullaniciComponent,
+    TestComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, InputMaskModule],
   providers: [],
