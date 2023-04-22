@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { KAYIT_URL, GIRIS_URL } from '../api.constants';
+import { KAYIT_URL, GIRIS_URL, KULLANICI_URL } from '../api.constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class KullaniciService {
+  Kullanici: any = JSON.parse(localStorage.getItem('Kullanici') || '{}');
   async Kayit(
     Ad: string,
     Soyad: string,
@@ -27,6 +28,7 @@ export class KullaniciService {
         }),
       })
     ).json();
+    this.Kullanici = data;
     return data;
   }
 
@@ -43,6 +45,39 @@ export class KullaniciService {
         }),
       })
     ).json();
+    this.Kullanici = data;
     return data;
+  }
+
+  async Tum() {
+    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
+    return await (
+      await fetch(KULLANICI_URL, {
+        headers: {
+          Authorization: Kullanici.Token || '',
+          'Content-Type': 'application/json',
+        },
+      })
+    ).json();
+  }
+
+  async YoneticiYap(KullaniciAdi: any) {
+    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
+    return await await fetch(KULLANICI_URL + '/yonetici-yap/' + KullaniciAdi, {
+      headers: {
+        Authorization: Kullanici.Token || '',
+        'Content-Type': 'application/json',
+      },
+    });
+  }
+
+  async KullaniciYap(KullaniciAdi: any) {
+    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
+    return await await fetch(KULLANICI_URL + '/kullanici-yap/' + KullaniciAdi, {
+      headers: {
+        Authorization: Kullanici.Token || '',
+        'Content-Type': 'application/json',
+      },
+    });
   }
 }

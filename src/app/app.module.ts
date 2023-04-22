@@ -8,6 +8,7 @@ import { KayitComponent } from './components/kayit/kayit.component';
 import { GirisComponent } from './components/giris/giris.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
+import { KullaniciComponent } from './components/kullanici/kullanici.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
     KayitComponent,
     GirisComponent,
     HeaderComponent,
+    KullaniciComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
