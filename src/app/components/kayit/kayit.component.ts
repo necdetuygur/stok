@@ -11,7 +11,12 @@ export class KayitComponent {
   constructor(
     private kullaniciService: KullaniciService,
     private router: Router
-  ) {}
+  ) {
+    const token = localStorage.getItem('token');
+    if (typeof token == 'string' && token.length > 1) {
+      this.router.navigateByUrl('/stok');
+    }
+  }
   formData: { [key: string]: string } = {
     Ad: '',
     Soyad: '',
@@ -30,10 +35,10 @@ export class KayitComponent {
       this.formData['KullaniciAdi'],
       this.formData['Sifre']
     );
-    console.log(token);
-    if (typeof token == 'string') {
+    if (typeof token == 'string' && token.length > 1) {
       localStorage.setItem('token', token);
-      this.router.navigateByUrl('/stok');
+      // this.router.navigateByUrl('/stok');
+      window.location.href = '/stok';
     }
   }
   GoGiris() {

@@ -20,10 +20,13 @@
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "./node_modules/admin-lte/dist/css/alt/adminlte.light.min.css",
+              "./node_modules/admin-lte/dist/css/adminlte.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/admin-lte/dist/js/adminlte.min.js"
+            ]
           },
           "configurations": {
             "production": {

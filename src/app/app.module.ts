@@ -7,6 +7,7 @@ import { ZamanPipe } from './pipes/zaman.pipe';
 import { KayitComponent } from './components/kayit/kayit.component';
 import { GirisComponent } from './components/giris/giris.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,11 @@ import { AppRoutingModule } from './app-routing.module';
     StokComponent,
     ZamanPipe,
     KayitComponent,
-    GirisComponent
+    GirisComponent,
+    HeaderComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
