@@ -12,8 +12,8 @@ export class GirisComponent {
     private kullaniciService: KullaniciService,
     private router: Router
   ) {
-    const token = localStorage.getItem('token');
-    if (typeof token == 'string' && token.length > 1) {
+    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
+    if (typeof Kullanici.Token == 'string') {
       this.router.navigateByUrl('/stok');
     }
   }
@@ -25,12 +25,12 @@ export class GirisComponent {
     this.formData[e.target.name] = '' + e.target.value || '';
   }
   async Giris() {
-    const token = await this.kullaniciService.Giris(
+    const Kullanici = await this.kullaniciService.Giris(
       this.formData['KullaniciAdi'],
       this.formData['Sifre']
     );
-    if (typeof token == 'string' && token.length > 1) {
-      localStorage.setItem('token', token);
+    if (typeof Kullanici.Token == 'string') {
+      localStorage.setItem('Kullanici', JSON.stringify(Kullanici));
       // this.router.navigateByUrl('/stok');
       window.location.href = '/stok';
     }

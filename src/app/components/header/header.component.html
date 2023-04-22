@@ -4,7 +4,13 @@
       <span class="brand-text font-weight-light">Stok</span>
     </a>
     <ul class="navbar-nav">
-      <li class="nav-item" *ngIf="token.length > 1">
+      <li class="nav-item" *ngIf="Kullanici.hasOwnProperty('Token')">
+        <a class="nav-link">
+          {{ Kullanici.Ad }}
+          {{ Kullanici.Soyad }}
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="Kullanici.hasOwnProperty('Token')">
         <a class="nav-link" style="cursor: pointer" (click)="Cikis()">
           Çıkış yap
         </a>

@@ -6,11 +6,13 @@ import { STOK_URL } from '../api.constants';
 })
 export class StokService {
   async Ekle(Ad: string, Miktar: number, Birim: string) {
+    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
+
     return await (
       await fetch(STOK_URL, {
         method: 'POST',
         headers: {
-          Authorization: localStorage.getItem('token') || '',
+          Authorization: Kullanici.Token || '',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({

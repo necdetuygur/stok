@@ -12,8 +12,8 @@ export class KayitComponent {
     private kullaniciService: KullaniciService,
     private router: Router
   ) {
-    const token = localStorage.getItem('token');
-    if (typeof token == 'string' && token.length > 1) {
+    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
+    if (typeof Kullanici.Token == 'string') {
       this.router.navigateByUrl('/stok');
     }
   }
@@ -28,15 +28,15 @@ export class KayitComponent {
     this.formData[e.target.name] = '' + e.target.value || '';
   }
   async Kayit() {
-    const token = await this.kullaniciService.Kayit(
+    const Kullanici = await this.kullaniciService.Kayit(
       this.formData['Ad'],
       this.formData['Soyad'],
       this.formData['Telefon'],
       this.formData['KullaniciAdi'],
       this.formData['Sifre']
     );
-    if (typeof token == 'string' && token.length > 1) {
-      localStorage.setItem('token', token);
+    if (typeof Kullanici.Token == 'string') {
+      localStorage.setItem('Kullanici', JSON.stringify(Kullanici));
       // this.router.navigateByUrl('/stok');
       window.location.href = '/stok';
     }

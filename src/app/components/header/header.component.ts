@@ -7,13 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  token = '';
+  Kullanici: any = {};
   constructor(private router: Router) {
-    this.token = localStorage.getItem('token') || '';
+    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
+    this.Kullanici = Kullanici;
   }
   Cikis() {
-    this.token = '';
-    localStorage.removeItem('token');
+    this.Kullanici = {};
+    localStorage.removeItem('Kullanici');
     this.router.navigateByUrl('/');
   }
 }

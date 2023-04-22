@@ -27,7 +27,7 @@ export class KullaniciService {
         }),
       })
     ).json();
-    return data.token;
+    return data;
   }
 
   async Giris(KullaniciAdi: string, Sifre: string) {
@@ -43,6 +43,6 @@ export class KullaniciService {
         }),
       })
     ).json();
-    return data.token;
+    return data;
   }
 }
