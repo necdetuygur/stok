@@ -9,6 +9,7 @@ import { GirisComponent } from './components/giris/giris.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './components/header/header.component';
 import { KullaniciComponent } from './components/kullanici/kullanici.component';
+import { InputMaskModule } from '@ngneat/input-mask';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { KullaniciComponent } from './components/kullanici/kullanici.component';
     HeaderComponent,
     KullaniciComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, InputMaskModule],
   providers: [],
   bootstrap: [AppComponent],
 })

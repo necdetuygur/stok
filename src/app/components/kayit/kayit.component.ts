@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { createMask } from '@ngneat/input-mask';
 import { KullaniciService } from 'src/app/services/kullanici.service';
 
 @Component({
@@ -17,6 +19,9 @@ export class KayitComponent {
       this.router.navigateByUrl('/stok');
     }
   }
+
+  phoneInputMask = createMask({ alias: '(999) 999-9999' });
+
   formData: { [key: string]: string } = {
     Ad: '',
     Soyad: '',
@@ -24,9 +29,11 @@ export class KayitComponent {
     KullaniciAdi: '',
     Sifre: '',
   };
+
   HasChange(e: any) {
     this.formData[e.target.name] = '' + e.target.value || '';
   }
+
   async Kayit() {
     const Kullanici = await this.kullaniciService.Kayit(
       this.formData['Ad'],
@@ -41,6 +48,7 @@ export class KayitComponent {
       window.location.href = '/stok';
     }
   }
+
   GoGiris() {
     this.router.navigateByUrl('/');
   }
