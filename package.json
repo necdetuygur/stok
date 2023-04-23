@@ -21,7 +21,7 @@
     "@ngneat/input-mask": "^6.1.0",
     "admin-lte": "^3.2.0",
     "axios": "^1.3.6",
-    "inputmask": "5.0.5",
+    "inputmask": "^5.0.8",
     "jquery": "^3.6.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
