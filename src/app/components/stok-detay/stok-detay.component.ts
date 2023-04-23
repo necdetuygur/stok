@@ -50,10 +50,10 @@ export class StokDetayComponent {
     }
   }
 
-  BirimAutoCompSelected(value: any) {
+  BirimAutoCompChanged(value: any) {
     this.Stok['Birim'] = '' + value || '';
   }
-  GrupAutoCompSelected(value: any) {
+  GrupAutoCompChanged(value: any) {
     this.Stok['Grup'] = '' + value || '';
   }
 }

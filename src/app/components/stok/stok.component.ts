@@ -9,11 +9,58 @@ import { StokService } from 'src/app/services/stok.service';
 })
 export class StokComponent {
   list: any;
+  filteredList: any;
+
+  GrupAutoComp = [];
+  GrupAutoCompValue = '';
+
+  KodAutoComp = [];
+  KodAutoCompValue = '';
+
+  AdAutoComp = [];
+  AdAutoCompValue = '';
+
   constructor(public stokService: StokService, private router: Router) {}
   async ngOnInit() {
     this.list = await this.stokService.Tum();
+    this.filteredList = this.list;
+    this.GrupAutoComp = await this.stokService.GetGrup();
+    this.KodAutoComp = await this.stokService.GetKod();
+    this.AdAutoComp = await this.stokService.GetAd();
   }
   GoStokGiris() {
     this.router.navigateByUrl('/stok-giris');
+  }
+
+  GrupAutoCompChanged(value: any) {
+    this.GrupAutoCompValue = value || '';
+    this.Filter();
+  }
+
+  KodAutoCompChanged(value: any) {
+    this.KodAutoCompValue = value || '';
+    this.Filter();
+  }
+
+  AdAutoCompChanged(value: any) {
+    this.AdAutoCompValue = value || '';
+    this.Filter();
+  }
+
+  Filter() {
+    console.log(
+      'GrupAutoCompValue',
+      this.GrupAutoCompValue,
+      'KodAutoCompValue',
+      this.KodAutoCompValue,
+      'AdAutoCompValue',
+      this.AdAutoCompValue
+    );
+    this.filteredList = this.list.filter(
+      (x: any) =>
+        x.Grup.indexOf(this.GrupAutoCompValue) > -1 &&
+        x.Kod.indexOf(this.KodAutoCompValue) > -1 &&
+        x.Ad.indexOf(this.AdAutoCompValue) > -1
+    );
   }
 }

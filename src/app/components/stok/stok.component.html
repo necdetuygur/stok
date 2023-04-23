@@ -1,4 +1,75 @@
-<div class="card">
+<div class="card mb-2">
+  <div class="card-body row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="Kod">Kod</label>
+        <div class="ng-autocomplete">
+          <ng-autocomplete
+            [data]="KodAutoComp"
+            (inputChanged)="KodAutoCompChanged($event)"
+            (inputCleared)="KodAutoCompChanged($event)"
+            (selected)="KodAutoCompChanged($event)"
+            [itemTemplate]="KodItemTemplate"
+            [notFoundTemplate]="KodNotFoundTemplate"
+          >
+          </ng-autocomplete>
+          <ng-template #KodItemTemplate let-item>
+            <a [innerHTML]="item"></a>
+          </ng-template>
+          <ng-template #KodNotFoundTemplate let-notFound>
+            <div [innerHTML]=""></div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="Grup">Grup</label>
+        <div class="ng-autocomplete">
+          <ng-autocomplete
+            [data]="GrupAutoComp"
+            (inputChanged)="GrupAutoCompChanged($event)"
+            (inputCleared)="GrupAutoCompChanged($event)"
+            (selected)="GrupAutoCompChanged($event)"
+            [itemTemplate]="GrupItemTemplate"
+            [notFoundTemplate]="GrupNotFoundTemplate"
+          >
+          </ng-autocomplete>
+          <ng-template #GrupItemTemplate let-item>
+            <a [innerHTML]="item"></a>
+          </ng-template>
+          <ng-template #GrupNotFoundTemplate let-notFound>
+            <div [innerHTML]=""></div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="Ad">Ad</label>
+        <div class="ng-autocomplete">
+          <ng-autocomplete
+            [data]="AdAutoComp"
+            (inputChanged)="AdAutoCompChanged($event)"
+            (inputCleared)="AdAutoCompChanged($event)"
+            (selected)="AdAutoCompChanged($event)"
+            [itemTemplate]="AdItemTemplate"
+            [notFoundTemplate]="AdNotFoundTemplate"
+          >
+          </ng-autocomplete>
+          <ng-template #AdItemTemplate let-item>
+            <a [innerHTML]="item"></a>
+          </ng-template>
+          <ng-template #AdNotFoundTemplate let-notFound>
+            <div [innerHTML]=""></div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mb-2">
   <div class="card-header">
     <strong>Stok</strong>
     <div class="card-tools">
@@ -21,7 +92,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of list">
+        <tr *ngFor="let item of filteredList">
           <td>{{ item.Kod }}</td>
           <td>{{ item.Grup }}</td>
           <td>{{ item.Ad }}</td>

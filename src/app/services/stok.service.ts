@@ -91,4 +91,12 @@ export class StokService {
   async GetGrup() {
     return await (await fetch(STOK_URL + '/grup')).json();
   }
+
+  async GetKod() {
+    return await (await fetch(STOK_URL + '/kod')).json();
+  }
+
+  async GetAd() {
+    return await (await fetch(STOK_URL + '/ad')).json();
+  }
 }

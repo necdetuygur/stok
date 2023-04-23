@@ -1,6 +1,8 @@
-<button class="btn btn-primary btn-sm" [routerLink]="'/stok'">Geri</button>
+<div class="mb-2">
+  <button class="btn btn-primary btn-sm" [routerLink]="'/stok'">Geri</button>
+</div>
 
-<div class="card mt-3">
+<div class="card mb-2">
   <div class="card-header">
     <strong>Stok</strong>
   </div>
@@ -22,7 +24,9 @@
       <div class="ng-autocomplete">
         <ng-autocomplete
           [data]="GrupAutoComp"
-          (selected)="GrupAutoCompSelected($event)"
+          (inputChanged)="GrupAutoCompChanged($event)"
+          (inputCleared)="GrupAutoCompChanged($event)"
+          (selected)="GrupAutoCompChanged($event)"
           [itemTemplate]="GrupItemTemplate"
           [notFoundTemplate]="GrupNotFoundTemplate"
           [initialValue]="Stok.Grup"
@@ -80,7 +84,9 @@
       <div class="ng-autocomplete">
         <ng-autocomplete
           [data]="BirimAutoComp"
-          (selected)="BirimAutoCompSelected($event)"
+          (inputChanged)="BirimAutoCompChanged($event)"
+          (inputCleared)="BirimAutoCompChanged($event)"
+          (selected)="BirimAutoCompChanged($event)"
           [itemTemplate]="BirimItemTemplate"
           [notFoundTemplate]="BirimNotFoundTemplate"
           [initialValue]="Stok.Birim"

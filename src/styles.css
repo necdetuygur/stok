@@ -5,3 +5,7 @@ body {
 .navbar {
   border-bottom: 1px solid #dee2e6;
 }
+
+.ng-autocomplete {
+  width: 100% !important;
+}
