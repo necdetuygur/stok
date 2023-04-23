@@ -5,7 +5,14 @@ import { STOK_URL } from '../api.constants';
   providedIn: 'root',
 })
 export class StokService {
-  async Ekle(Ad: string, Miktar: number, Birim: string) {
+  async Ekle(
+    Kod: string,
+    Grup: string,
+    Ad: string,
+    Miktar: number,
+    Fiyat: string,
+    Birim: string
+  ) {
     const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
     try {
       const f = await fetch(STOK_URL, {
@@ -15,8 +22,11 @@ export class StokService {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          Kod,
+          Grup,
           Ad,
           Miktar,
+          Fiyat,
           Birim,
         }),
       });
@@ -29,7 +39,47 @@ export class StokService {
       alert(error);
     }
   }
+
+  async Guncelle(
+    StokID: any,
+    Kod: string,
+    Grup: string,
+    Ad: string,
+    Miktar: number,
+    Fiyat: string,
+    Birim: string
+  ) {
+    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
+    try {
+      const f = await fetch(STOK_URL + '/' + StokID, {
+        method: 'PUT',
+        headers: {
+          Authorization: Kullanici.Token || '',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          Kod,
+          Grup,
+          Ad,
+          Miktar,
+          Fiyat,
+          Birim,
+        }),
+      });
+      if (f.ok) {
+        return await f.json();
+      } else {
+        alert(await f.text());
+      }
+    } catch (error) {
+      alert(error);
+    }
+  }
+
   async Tum() {
     return await (await fetch(STOK_URL)).json();
+  }
+  async Get(StokID: any) {
+    return await (await fetch(STOK_URL + '/' + StokID)).json();
   }
 }

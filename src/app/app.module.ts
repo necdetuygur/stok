@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { KullaniciComponent } from './components/kullanici/kullanici.component';
 import { InputMaskModule } from '@ngneat/input-mask';
 import { TestComponent } from './components/test/test.component';
+import { StokDetayComponent } from './components/stok-detay/stok-detay.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TestComponent } from './components/test/test.component';
     HeaderComponent,
     KullaniciComponent,
     TestComponent,
+    StokDetayComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, InputMaskModule],
   providers: [],

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { StokService } from 'src/app/services/stok.service';
 
 @Component({
@@ -8,13 +9,11 @@ import { StokService } from 'src/app/services/stok.service';
 })
 export class StokComponent {
   list: any;
-  constructor(public stokService: StokService) {}
+  constructor(public stokService: StokService, private router: Router) {}
   async ngOnInit() {
     this.list = await this.stokService.Tum();
   }
-  async Ekle() {
-    const res = await this.stokService.Ekle(prompt('Ad', '') || '', 1, 'Adet');
-    console.log(res);
-    this.list = await this.stokService.Tum();
+  GoStokGiris() {
+    this.router.navigateByUrl('/stok-giris');
   }
 }

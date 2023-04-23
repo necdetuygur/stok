@@ -4,6 +4,7 @@ import { GirisComponent } from './components/giris/giris.component';
 import { KayitComponent } from './components/kayit/kayit.component';
 import { StokComponent } from './components/stok/stok.component';
 import { KullaniciComponent } from './components/kullanici/kullanici.component';
+import { StokDetayComponent } from './components/stok-detay/stok-detay.component';
 
 const routes: Routes = [
   { path: '', component: GirisComponent },
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'stok',
     component: StokComponent,
+  },
+  {
+    path: 'stok-detay/:StokID',
+    component: StokDetayComponent,
   },
   {
     path: 'kullanici',

@@ -1,0 +1,90 @@
+<button class="btn btn-primary btn-xs" [routerLink]="'/stok'">Geri</button>
+
+<div class="card mt-3">
+  <div class="card-header">
+    <strong>Stok</strong>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="Kod">Kod</label>
+      <input
+        (change)="HasChange($event)"
+        type="text"
+        class="form-control"
+        name="Kod"
+        id="Kod"
+        [value]="Stok.Kod || ''"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Grup">Grup</label>
+      <input
+        (change)="HasChange($event)"
+        type="text"
+        class="form-control"
+        name="Grup"
+        id="Grup"
+        [value]="Stok.Grup || ''"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Ad">Ad</label>
+      <input
+        (change)="HasChange($event)"
+        type="text"
+        class="form-control"
+        name="Ad"
+        id="Ad"
+        [value]="Stok.Ad || ''"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Miktar">Miktar</label>
+      <input
+        (change)="HasChange($event)"
+        type="text"
+        class="form-control"
+        name="Miktar"
+        id="Miktar"
+        [value]="Stok.Miktar || ''"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Fiyat">Fiyat</label>
+      <input
+        (change)="HasChange($event)"
+        type="text"
+        class="form-control"
+        name="Fiyat"
+        id="Fiyat"
+        [value]="Stok.Fiyat || ''"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="Birim">Birim</label>
+      <input
+        (change)="HasChange($event)"
+        type="text"
+        class="form-control"
+        name="Birim"
+        id="Birim"
+        [value]="Stok.Birim || ''"
+      />
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <button
+      type="button"
+      class="btn btn-primary float-right"
+      (click)="Kaydet()"
+    >
+      Kaydet
+    </button>
+  </div>
+</div>

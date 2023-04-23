@@ -2,27 +2,42 @@
   <div class="card-header">
     <strong>Stok</strong>
     <div class="card-tools">
-      <button class="btn btn-primary btn-xs" (click)="Ekle()">Ekle</button>
+      <button class="btn btn-primary btn-xs" [routerLink]="'/stok-detay/0'">
+        Stok Ekle
+      </button>
     </div>
   </div>
   <div class="card-body p-0">
     <table class="table table-striped">
       <thead>
         <tr>
+          <th>Kod</th>
+          <th>Grup</th>
           <th>Ad</th>
           <th>Miktar</th>
+          <th>Fiyat</th>
           <th>Birim</th>
+          <th class="text-right">İşlem</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of list">
+          <td>{{ item.Kod }}</td>
+          <td>{{ item.Grup }}</td>
           <td>{{ item.Ad }}</td>
           <td>{{ item.Miktar }}</td>
+          <td>{{ item.Fiyat }}</td>
           <td>{{ item.Birim }}</td>
+          <td class="text-right">
+            <button
+              class="btn btn-primary btn-sm"
+              [routerLink]="'/stok-detay/' + item.StokID"
+            >
+              Düzenle
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-
-

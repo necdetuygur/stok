@@ -37,7 +37,7 @@ export class KayitComponent {
     if (
       ('' + this.formData['Ad'].trim()).length < 3 ||
       ('' + this.formData['Soyad'].trim()).length < 3 ||
-      ('' + this.formData['Telefon'].trim()).length < 10 ||
+      ('' + this.formData['Telefon'].trim()).length < 9 ||
       ('' + this.formData['KullaniciAdi'].trim()).length < 3 ||
       ('' + this.formData['Sifre'].trim()).length < 8
     ) {
