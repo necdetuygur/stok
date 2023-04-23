@@ -79,7 +79,16 @@ export class StokService {
   async Tum() {
     return await (await fetch(STOK_URL)).json();
   }
+
   async Get(StokID: any) {
     return await (await fetch(STOK_URL + '/' + StokID)).json();
+  }
+
+  async GetBirim() {
+    return await (await fetch(STOK_URL + '/birim')).json();
+  }
+
+  async GetGrup() {
+    return await (await fetch(STOK_URL + '/grup')).json();
   }
 }

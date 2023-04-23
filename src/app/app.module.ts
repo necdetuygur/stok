@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 import { AppComponent } from './app.component';
 import { StokComponent } from './components/stok/stok.component';
@@ -25,7 +26,12 @@ import { StokDetayComponent } from './components/stok-detay/stok-detay.component
     TestComponent,
     StokDetayComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, InputMaskModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    InputMaskModule,
+    AutocompleteLibModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

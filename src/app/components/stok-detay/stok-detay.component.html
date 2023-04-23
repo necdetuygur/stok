@@ -1,4 +1,4 @@
-<button class="btn btn-primary btn-xs" [routerLink]="'/stok'">Geri</button>
+<button class="btn btn-primary btn-sm" [routerLink]="'/stok'">Geri</button>
 
 <div class="card mt-3">
   <div class="card-header">
@@ -19,14 +19,24 @@
 
     <div class="form-group">
       <label for="Grup">Grup</label>
-      <input
-        (change)="HasChange($event)"
-        type="text"
-        class="form-control"
-        name="Grup"
-        id="Grup"
-        [value]="Stok.Grup || ''"
-      />
+      <div class="ng-autocomplete">
+        <ng-autocomplete
+          [data]="GrupAutoComp"
+          (selected)="GrupAutoCompSelected($event)"
+          [itemTemplate]="GrupItemTemplate"
+          [notFoundTemplate]="GrupNotFoundTemplate"
+          [initialValue]="Stok.Grup"
+        >
+        </ng-autocomplete>
+
+        <ng-template #GrupItemTemplate let-item>
+          <a [innerHTML]="item"></a>
+        </ng-template>
+
+        <ng-template #GrupNotFoundTemplate let-notFound>
+          <div [innerHTML]=""></div>
+        </ng-template>
+      </div>
     </div>
 
     <div class="form-group">
@@ -67,14 +77,24 @@
 
     <div class="form-group">
       <label for="Birim">Birim</label>
-      <input
-        (change)="HasChange($event)"
-        type="text"
-        class="form-control"
-        name="Birim"
-        id="Birim"
-        [value]="Stok.Birim || ''"
-      />
+      <div class="ng-autocomplete">
+        <ng-autocomplete
+          [data]="BirimAutoComp"
+          (selected)="BirimAutoCompSelected($event)"
+          [itemTemplate]="BirimItemTemplate"
+          [notFoundTemplate]="BirimNotFoundTemplate"
+          [initialValue]="Stok.Birim"
+        >
+        </ng-autocomplete>
+
+        <ng-template #BirimItemTemplate let-item>
+          <a [innerHTML]="item"></a>
+        </ng-template>
+
+        <ng-template #BirimNotFoundTemplate let-notFound>
+          <div [innerHTML]=""></div>
+        </ng-template>
+      </div>
     </div>
   </div>
 

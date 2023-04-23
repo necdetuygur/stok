@@ -10,11 +10,15 @@ import { StokService } from 'src/app/services/stok.service';
 export class StokDetayComponent {
   StokID = '' + this.route.snapshot.paramMap.get('StokID');
   Stok: any = {};
+  BirimAutoComp = [];
+  GrupAutoComp = [];
   constructor(public stokService: StokService, private route: ActivatedRoute) {}
   async ngOnInit() {
     if (this.StokID != '0') {
       this.Stok = await this.stokService.Get(this.StokID);
     }
+    this.BirimAutoComp = await this.stokService.GetBirim();
+    this.GrupAutoComp = await this.stokService.GetGrup();
   }
   HasChange(e: any) {
     this.Stok[e.target.name] = '' + e.target.value || '';
@@ -44,5 +48,12 @@ export class StokDetayComponent {
         )
       );
     }
+  }
+
+  BirimAutoCompSelected(value: any) {
+    this.Stok['Birim'] = '' + value || '';
+  }
+  GrupAutoCompSelected(value: any) {
+    this.Stok['Grup'] = '' + value || '';
   }
 }
