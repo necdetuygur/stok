@@ -20,7 +20,15 @@
           <td>{{ item.Soyad }}</td>
           <td>{{ item.Telefon }}</td>
           <td>{{ item.KullaniciAdi }}</td>
-          <td>{{ item.Rol }}</td>
+          <td>
+            {{
+              item.Rol == "Kullanici"
+                ? "Kullanıcı"
+                : item.Rol == "Yonetici"
+                ? "Yönetici"
+                : ""
+            }}
+          </td>
           <td>
             <button
               class="btn btn-sm btn-danger"

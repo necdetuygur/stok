@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { STOK_URL } from '../api.constants';
+import { AlertService } from './alert.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StokService {
+  constructor(private al: AlertService) {}
   async Ekle(
     Kod: string,
     Grup: string,
@@ -33,10 +35,10 @@ export class StokService {
       if (f.ok) {
         return await f.json();
       } else {
-        alert(await f.text());
+        this.al.Fire('danger', 'Hata', await f.text());
       }
     } catch (error) {
-      alert(error);
+      this.al.Fire('danger', 'Hata', JSON.stringify(error) || '');
     }
   }
 
@@ -69,34 +71,94 @@ export class StokService {
       if (f.ok) {
         return await f.json();
       } else {
-        alert(await f.text());
+        this.al.Fire('danger', 'Hata', await f.text());
       }
     } catch (error) {
-      alert(error);
+      this.al.Fire('danger', 'Hata', JSON.stringify(error) || '');
     }
   }
 
   async Tum() {
-    return await (await fetch(STOK_URL)).json();
+    try {
+      const f = await fetch(STOK_URL);
+
+      if (f.ok) {
+        return await f.json();
+      } else {
+        this.al.Fire('danger', 'Hata', await f.text());
+      }
+    } catch (error) {
+      this.al.Fire('danger', 'Hata', JSON.stringify(error) || '');
+    }
   }
 
   async Get(StokID: any) {
-    return await (await fetch(STOK_URL + '/' + StokID)).json();
+    try {
+      const f = await fetch(STOK_URL + '/' + StokID);
+
+      if (f.ok) {
+        return await f.json();
+      } else {
+        this.al.Fire('danger', 'Hata', await f.text());
+      }
+    } catch (error) {
+      this.al.Fire('danger', 'Hata', JSON.stringify(error) || '');
+    }
   }
 
   async GetBirim() {
-    return await (await fetch(STOK_URL + '/birim')).json();
+    try {
+      const f = await fetch(STOK_URL + '/birim');
+
+      if (f.ok) {
+        return await f.json();
+      } else {
+        this.al.Fire('danger', 'Hata', await f.text());
+      }
+    } catch (error) {
+      this.al.Fire('danger', 'Hata', JSON.stringify(error) || '');
+    }
   }
 
   async GetGrup() {
-    return await (await fetch(STOK_URL + '/grup')).json();
+    try {
+      const f = await fetch(STOK_URL + '/grup');
+
+      if (f.ok) {
+        return await f.json();
+      } else {
+        this.al.Fire('danger', 'Hata', await f.text());
+      }
+    } catch (error) {
+      this.al.Fire('danger', 'Hata', JSON.stringify(error) || '');
+    }
   }
 
   async GetKod() {
-    return await (await fetch(STOK_URL + '/kod')).json();
+    try {
+      const f = await fetch(STOK_URL + '/kod');
+
+      if (f.ok) {
+        return await f.json();
+      } else {
+        this.al.Fire('danger', 'Hata', await f.text());
+      }
+    } catch (error) {
+      this.al.Fire('danger', 'Hata', JSON.stringify(error) || '');
+    }
   }
 
   async GetAd() {
-    return await (await fetch(STOK_URL + '/ad')).json();
+    try {
+      const f = await fetch(STOK_URL + '/ad');
+
+      if (f.ok) {
+        return await f.json();
+      } else {
+        this.al.Fire('danger', 'Hata', await f.text());
+      }
+    } catch (error) {
+      this.al.Fire('danger', 'Hata', JSON.stringify(error) || '');
+    }
   }
 }

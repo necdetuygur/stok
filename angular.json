@@ -21,11 +21,13 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "./node_modules/admin-lte/plugins/select2/css/select2.min.css",
+              "./node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
               "./node_modules/admin-lte/dist/css/adminlte.min.css",
               "src/styles.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js",
               "./node_modules/admin-lte/plugins/bootstrap-switch/js/bootstrap-switch.min.js",
               "./node_modules/admin-lte/plugins/select2/js/select2.full.min.js",
               "./node_modules/admin-lte/dist/js/adminlte.min.js"

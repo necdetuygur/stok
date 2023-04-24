@@ -1,12 +1,12 @@
 <nav id="navbar" class="navbar navbar-expand-md navbar-dark navbar-black">
   <div class="container">
-    <a href="." class="navbar-brand" *ngIf="!Kullanici.hasOwnProperty('Token')">
-      <span class="brand-text font-weight-light">Stok</span>
+    <a href="." class="navbar-brand">
+      <img src="assets/stok.png" width="32" class="mr-3" />
     </a>
 
     <ul class="navbar-nav" *ngIf="Kullanici.hasOwnProperty('Token')">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/stok">Stok</a>
+        <a class="nav-link" routerLink="/stok"> Stok </a>
       </li>
       <li class="nav-item" *ngIf="Kullanici.Rol == 'Yonetici'">
         <a class="nav-link" routerLink="/kullanici">Kullanıcılar</a>

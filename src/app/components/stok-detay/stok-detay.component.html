@@ -114,3 +114,100 @@
     </button>
   </div>
 </div>
+
+<div class="card mb-2" *ngIf="StokLog.length > 0">
+  <div class="card-body">
+    <div class="timeline timeline-inverse">
+      <div class="time-label">
+        <span class="bg-primary">Geçmiş</span>
+      </div>
+
+      <div *ngFor="let log of StokLog">
+        <i class="far fa-clock bg-primary"></i>
+        <div class="timeline-item">
+          <span class="time"><i class="far fa-clock"></i> {{ log.Zaman }}</span>
+          <h3 class="timeline-header">
+            <a href="#">{{ log.Kullanici }}</a> değişikliği öncesi
+          </h3>
+          <div class="timeline-body">
+            <div class="input-group input-group-sm mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Kod</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                readonly
+                [value]="log.Kod"
+              />
+            </div>
+
+            <div class="input-group input-group-sm mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Grup</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                readonly
+                [value]="log.Grup"
+              />
+            </div>
+
+            <div class="input-group input-group-sm mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Ad</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                readonly
+                [value]="log.Ad"
+              />
+            </div>
+
+            <div class="input-group input-group-sm mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Miktar</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                readonly
+                [value]="log.Miktar"
+              />
+            </div>
+
+            <div class="input-group input-group-sm mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Fiyat</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                readonly
+                [value]="log.Fiyat"
+              />
+            </div>
+
+            <div class="input-group input-group-sm mb-2">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Birim</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                readonly
+                [value]="log.Birim"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <i class="far fa-clock bg-gray"></i>
+      </div>
+    </div>
+  </div>
+</div>
