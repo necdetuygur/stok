@@ -1,5 +1,7 @@
 # Stok
 
+[https://necdetuygur.github.io/stok/](https://necdetuygur.github.io/stok/)
+
 ## Giriş
 
 ![Giriş](./screenshots/giris.png)
