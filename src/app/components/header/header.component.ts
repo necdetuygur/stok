@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { KullaniciService } from 'src/app/services/kullanici.service';
 
 @Component({
   selector: 'app-header',
@@ -7,17 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  Kullanici: any = {};
   DarkMode = (localStorage.getItem('DarkMode') || '0') == '1';
 
-  constructor(private router: Router) {
-    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
-    this.Kullanici = Kullanici;
-
+  constructor(
+    private router: Router,
+    public kullaniciService: KullaniciService
+  ) {
     this.DarkSet();
   }
   Cikis() {
-    this.Kullanici = {};
+    this.kullaniciService.Kullanici = {};
     localStorage.removeItem('Kullanici');
     this.router.navigateByUrl('/');
   }

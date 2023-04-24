@@ -1,4 +1,16 @@
-<app-header></app-header>
-<div class="container mt-3 mb-5">
-  <router-outlet></router-outlet>
+<div class="wrapper">
+  <app-header></app-header>
+  <app-aside></app-aside>
+  <div
+    [ngClass]="{
+      'content-wrapper': kullaniciService.Kullanici.hasOwnProperty('Token'),
+      container: !kullaniciService.Kullanici.hasOwnProperty('Token')
+    }"
+  >
+    <div class="content">
+      <div class="container-fluid pt-2 pb-2">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
 </div>

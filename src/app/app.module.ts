@@ -13,6 +13,7 @@ import { KullaniciComponent } from './components/kullanici/kullanici.component';
 import { InputMaskModule } from '@ngneat/input-mask';
 import { TestComponent } from './components/test/test.component';
 import { StokDetayComponent } from './components/stok-detay/stok-detay.component';
+import { AsideComponent } from './components/aside/aside.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { StokDetayComponent } from './components/stok-detay/stok-detay.component
     KullaniciComponent,
     TestComponent,
     StokDetayComponent,
+    AsideComponent,
   ],
   imports: [
     BrowserModule,

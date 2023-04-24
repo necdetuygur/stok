@@ -1,0 +1,56 @@
+<aside
+  class="main-sidebar sidebar-dark-primary elevation-4"
+  *ngIf="kullaniciService.Kullanici.hasOwnProperty('Token')"
+>
+  <a href="." class="brand-link">
+    <img
+      src="assets/stok.png"
+      class="brand-image img-circle elevation-3"
+      style="opacity: 0.8"
+    />
+    <span class="brand-text font-weight-light">Stok</span>
+  </a>
+
+  <div class="sidebar">
+    <nav class="mt-2">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+        data-accordion="false"
+      >
+        <!-- <li class="nav-item">
+          <a href="." class="nav-link active">
+            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <p>Giriş</p>
+          </a>
+        </li> -->
+        <li
+          class="nav-item"
+          *ngIf="kullaniciService.Kullanici.Rol == 'Yonetici'"
+        >
+          <a
+            class="nav-link"
+            routerLink="/kullanici"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <i class="nav-icon fa fa-users"></i>
+            <p>Kullanıcılar</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/stok"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <i class="nav-icon fa fa-boxes"></i>
+            <p>Stok</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</aside>
