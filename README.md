@@ -1,35 +1,48 @@
 # Stok
 
-Canlı Adres: [https://necdetuygur.github.io/stok/](https://necdetuygur.github.io/stok/) \
-API Host Servis Projesi: [https://github.com/necdetuygur/stok-api](https://github.com/necdetuygur/stok-api)
+---
 
-## Giriş
+## Canlı Adres
+
+[https://necdetuygur.github.io/stok/](https://necdetuygur.github.io/stok/) \
+
+## API Host Servis Projesi
+
+[https://github.com/necdetuygur/stok-api](https://github.com/necdetuygur/stok-api)
+
+---
+
+## Ekran Görüntüleri
+
+### Giriş
 
 ![Giriş](./screenshots/giris.png)
 
-## Kayıt
+### Kayıt
 
 ![Kayıt](./screenshots/kayit.png)
 
-## Kullanıcılar
+### Kullanıcılar
 
 ![Kullanıcılar](./screenshots/kullanicilar.png)
 
-## Stoklar
+### Stoklar
 
 ![Stoklar](./screenshots/stok.png)
 
-## Stok Detay / Stok Ekle
+### Stok Detay / Stok Ekle
 
 ![Stok Detay / Stok Ekle](./screenshots/stok-detay.png)
 
-## Kayıt (Karanlık)
+### Kayıt (Karanlık)
 
 ![Kayıt (Karanlık)](./screenshots/kayit-dark.png)
 
-## Kullanıcılar (Karanlık)
+### Kullanıcılar (Karanlık)
 
 ![Kullanıcılar (Karanlık)](./screenshots/kullanicilar-dark.png)
+
+---
 
 ## gh-pages
 
