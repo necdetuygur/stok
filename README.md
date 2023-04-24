@@ -4,7 +4,7 @@
 
 ## Canlı Adres
 
-[https://necdetuygur.github.io/stok/](https://necdetuygur.github.io/stok/) \
+[https://necdetuygur.github.io/stok/](https://necdetuygur.github.io/stok/)
 
 ## API Host Servis Projesi
 
