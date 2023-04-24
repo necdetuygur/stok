@@ -32,23 +32,57 @@
           <a
             class="nav-link"
             routerLink="/kullanici"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
+            [ngClass]="{ active: CurrentRoute.indexOf('/kullanici') > -1 }"
           >
             <i class="nav-icon fa fa-users"></i>
             <p>Kullanıcılar</p>
           </a>
         </li>
-        <li class="nav-item">
+
+        <li
+          class="nav-item"
+          [ngClass]="{
+            'menu-is-opening menu-open': CurrentRoute.indexOf('/stok') > -1
+          }"
+        >
           <a
+            href="#"
             class="nav-link"
-            routerLink="/stok"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
+            [ngClass]="{ active: CurrentRoute.indexOf('/stok') > -1 }"
           >
             <i class="nav-icon fa fa-boxes"></i>
-            <p>Stok</p>
+            <p>
+              Stok
+              <i class="right fas fa-angle-left"></i>
+            </p>
           </a>
+          <ul
+            class="nav nav-treeview"
+            [ngStyle]="{
+              'display: none': !(CurrentRoute.indexOf('/stok') > -1)
+            }"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/stok"
+                [ngClass]="{ active: CurrentRoute == '/stok' }"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>Stoklar</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLink="/stok-detay/0"
+                [ngClass]="{ active: CurrentRoute == '/stok-detay/0' }"
+              >
+                <i class="far fa-circle nav-icon"></i>
+                <p>Stok Ekle</p>
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>
