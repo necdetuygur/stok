@@ -10,31 +10,31 @@
 
 ## Ekran Görüntüleri
 
-<center><strong>Giriş</strong></center>
+### Giriş
 
 ![Giriş](./screenshots/giris.png)
 
-<center><strong>Kayıt</strong></center>
+### Kayıt
 
 ![Kayıt](./screenshots/kayit.png)
 
-<center><strong>Kullanıcılar</strong></center>
+### Kullanıcılar
 
 ![Kullanıcılar](./screenshots/kullanicilar.png)
 
-<center><strong>Stoklar</strong></center>
+### Stoklar
 
 ![Stoklar](./screenshots/stok.png)
 
-<center><strong>Stok Detay / Stok Ekle</strong></center>
+### Stok Detay / Stok Ekle
 
 ![Stok Detay / Stok Ekle](./screenshots/stok-detay.png)
 
-<center><strong>Kayıt (Karanlık)</strong></center>
+### Kayıt (Karanlık)
 
 ![Kayıt (Karanlık)](./screenshots/kayit-dark.png)
 
-<center><strong>Kullanıcılar (Karanlık)</strong></center>
+### Kullanıcılar (Karanlık)
 
 ![Kullanıcılar (Karanlık)](./screenshots/kullanicilar-dark.png)
 
