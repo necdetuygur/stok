@@ -31,8 +31,7 @@ export class GirisComponent {
     );
     if (typeof Kullanici.Token == 'string') {
       localStorage.setItem('Kullanici', JSON.stringify(Kullanici));
-      // this.router.navigateByUrl('/stok');
-      window.location.href = '/stok';
+      this.router.navigateByUrl('/stok');
     }
   }
   GoKayit() {
