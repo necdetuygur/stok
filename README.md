@@ -1,6 +1,7 @@
 # Stok
 
-[https://necdetuygur.github.io/stok/](https://necdetuygur.github.io/stok/)
+Canlı Adres: [https://necdetuygur.github.io/stok/](https://necdetuygur.github.io/stok/) \
+API Host Servis Projesi: [https://github.com/necdetuygur/stok-api](https://github.com/necdetuygur/stok-api)
 
 ## Giriş
 
