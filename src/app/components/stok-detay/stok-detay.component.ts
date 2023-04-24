@@ -64,9 +64,9 @@ export class StokDetayComponent {
   }
 
   BirimAutoCompChanged(value: any) {
-    this.Stok['Birim'] = '' + value || '';
+    this.Stok['Birim'] = value || '';
   }
   GrupAutoCompChanged(value: any) {
-    this.Stok['Grup'] = '' + value || '';
+    this.Stok['Grup'] = value || '';
   }
 }

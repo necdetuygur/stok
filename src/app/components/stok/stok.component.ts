@@ -48,19 +48,17 @@ export class StokComponent {
   }
 
   Filter() {
-    console.log(
-      'GrupAutoCompValue',
-      this.GrupAutoCompValue,
-      'KodAutoCompValue',
-      this.KodAutoCompValue,
-      'AdAutoCompValue',
-      this.AdAutoCompValue
-    );
     this.filteredList = this.list.filter(
       (x: any) =>
-        x.Grup.indexOf(this.GrupAutoCompValue) > -1 &&
-        x.Kod.indexOf(this.KodAutoCompValue) > -1 &&
-        x.Ad.indexOf(this.AdAutoCompValue) > -1
+        x.Grup.toLocaleLowerCase().indexOf(
+          this.GrupAutoCompValue.toLocaleLowerCase()
+        ) > -1 &&
+        x.Kod.toLocaleLowerCase().indexOf(
+          this.KodAutoCompValue.toLocaleLowerCase()
+        ) > -1 &&
+        x.Ad.toLocaleLowerCase().indexOf(
+          this.AdAutoCompValue.toLocaleLowerCase()
+        ) > -1
     );
   }
 }
