@@ -1,6 +1,6 @@
 # Stok
 
-## Giriş
+## Giriş
 
 ![Giriş](./screenshots/giris.png)
 
