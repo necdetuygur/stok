@@ -4,7 +4,7 @@
 
 [https://necdetuygur.github.io/stok/](https://necdetuygur.github.io/stok/)
 
-## API Host Servis Projesi
+## API Host Servis Back-end Projesi
 
 [https://github.com/necdetuygur/stok-api](https://github.com/necdetuygur/stok-api)
 
