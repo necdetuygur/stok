@@ -4,6 +4,24 @@
   </div>
   <div class="card-body">
     <div class="form-group">
+      <label for="Host">Host</label>
+      <div class="input-group">
+        <input
+          (change)="HasChange($event)"
+          type="text"
+          class="form-control"
+          name="Host"
+          id="Host"
+          (keyup.enter)="Giris()"
+          [value]="Host"
+        />
+        <span class="input-group-append">
+          <a type="button" class="btn btn-primary" href=".">Tanımla</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
       <label for="KullaniciAdi">Kullanıcı Adı</label>
       <input
         (change)="HasChange($event)"

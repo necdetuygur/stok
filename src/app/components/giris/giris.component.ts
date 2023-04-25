@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ENDPOINT } from 'src/app/api.constants';
 import { KullaniciService } from 'src/app/services/kullanici.service';
 
 @Component({
@@ -21,8 +22,13 @@ export class GirisComponent {
     KullaniciAdi: '',
     Sifre: '',
   };
+  Host = ENDPOINT;
   HasChange(e: any) {
     this.formData[e.target.name] = '' + e.target.value || '';
+    if (e.target.name == 'Host') {
+      this.Host = e.target.value;
+      localStorage.setItem('Host', this.Host);
+    }
   }
   async Giris() {
     const Kullanici = await this.kullaniciService.Giris(
