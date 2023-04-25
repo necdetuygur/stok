@@ -20,6 +20,10 @@
 
 ![Stok Detay / Stok Ekle](./screenshots/stok-detay.png)
 
+## Stok Detay Geçmiş
+
+![Stok Detay / Stok Ekle](./screenshots/stok-detay-log.png)
+
 ## Kayıt (Karanlık)
 
 ![Kayıt (Karanlık)](./screenshots/kayit-dark.png)
