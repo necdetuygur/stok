@@ -28,6 +28,9 @@ export class GirisComponent {
     this.formData[e.target.name] = '' + e.target.value || '';
     if (e.target.name == 'Host') {
       this.Host = e.target.value;
+      while (this.Host.split('').reverse()[0] == '/') {
+        this.Host = this.Host.substring(0, this.Host.length - 1);
+      }
       localStorage.setItem('Host', this.Host);
     }
   }

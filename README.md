@@ -26,9 +26,17 @@
 
 ![Stoklar](./screenshots/stok.png)
 
+### Stoklar Filtre
+
+![Stoklar Filtre](./screenshots/stok-filtre.png)
+
 ### Stok Detay / Stok Ekle
 
 ![Stok Detay / Stok Ekle](./screenshots/stok-detay.png)
+
+### Stok Detay Geçmiş
+
+![Stok Detay Geçmiş](./screenshots/stok-detay-log.png)
 
 ### Kayıt (Karanlık)
 
