@@ -9,16 +9,6 @@ import { KullaniciService } from 'src/app/services/kullanici.service';
   styleUrls: ['./kayit.component.css'],
 })
 export class KayitComponent {
-  constructor(
-    private kullaniciService: KullaniciService,
-    private router: Router
-  ) {
-    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
-    if (typeof Kullanici.Token == 'string') {
-      this.router.navigateByUrl('/stok');
-    }
-  }
-
   phoneInputMask = createMask({ alias: '(999) 999-9999' });
 
   formData: { [key: string]: string } = {
@@ -29,11 +19,25 @@ export class KayitComponent {
     Sifre: '',
   };
 
+  Loading = false;
+
+  constructor(
+    private kullaniciService: KullaniciService,
+    private router: Router
+  ) {
+    const Kullanici = JSON.parse(localStorage.getItem('Kullanici') || '{}');
+    if (typeof Kullanici.Token == 'string') {
+      this.router.navigateByUrl('/stok');
+    }
+  }
+
   HasChange(e: any) {
     this.formData[e.target.name] = '' + e.target.value || '';
   }
 
   async Kayit() {
+    this.Loading = true;
+
     if (
       ('' + this.formData['Ad'].trim()).length < 3 ||
       ('' + this.formData['Soyad'].trim()).length < 3 ||
@@ -44,6 +48,7 @@ export class KayitComponent {
       alert('Lütfen tüm alanları doldurun.');
       return;
     }
+
     const Kullanici = await this.kullaniciService.Kayit(
       this.formData['Ad'],
       this.formData['Soyad'],
@@ -51,9 +56,12 @@ export class KayitComponent {
       this.formData['KullaniciAdi'],
       this.formData['Sifre']
     );
-    if (typeof Kullanici.Token == 'string') {
+
+    if (Kullanici != undefined && typeof Kullanici.Token == 'string') {
       localStorage.setItem('Kullanici', JSON.stringify(Kullanici));
       this.router.navigateByUrl('/stok');
+    } else {
+      this.Loading = false;
     }
   }
 

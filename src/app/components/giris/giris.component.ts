@@ -9,6 +9,12 @@ import { KullaniciService } from 'src/app/services/kullanici.service';
   styleUrls: ['./giris.component.css'],
 })
 export class GirisComponent {
+  formData: { [key: string]: string } = {
+    KullaniciAdi: '',
+    Sifre: '',
+  };
+  Host = ENDPOINT;
+  Loading = false;
   constructor(
     private kullaniciService: KullaniciService,
     private router: Router
@@ -18,11 +24,6 @@ export class GirisComponent {
       this.router.navigateByUrl('/stok');
     }
   }
-  formData: { [key: string]: string } = {
-    KullaniciAdi: '',
-    Sifre: '',
-  };
-  Host = ENDPOINT;
   HasChange(e: any) {
     this.formData[e.target.name] = '' + e.target.value || '';
     if (e.target.name == 'Host') {
@@ -31,13 +32,18 @@ export class GirisComponent {
     }
   }
   async Giris() {
+    this.Loading = true;
+
     const Kullanici = await this.kullaniciService.Giris(
       this.formData['KullaniciAdi'],
       this.formData['Sifre']
     );
-    if (typeof Kullanici.Token == 'string') {
+
+    if (Kullanici != undefined && typeof Kullanici.Token == 'string') {
       localStorage.setItem('Kullanici', JSON.stringify(Kullanici));
       this.router.navigateByUrl('/stok');
+    } else {
+      this.Loading = false;
     }
   }
   GoKayit() {

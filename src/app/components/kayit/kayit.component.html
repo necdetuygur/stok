@@ -1,6 +1,7 @@
 <div class="card mb-2">
   <div class="card-header">
     <strong>Kayıt Ol</strong>
+    <app-loading class="float-right" *ngIf="Loading"></app-loading>
   </div>
   <div class="card-body">
     <div class="form-group">
@@ -70,11 +71,7 @@
 
 <div class="text-center">
   Hesabınız var mı?
-  <button
-    type="button"
-    class="btn btn-outline-primary btn-xs"
-    (click)="GoGiris()"
-  >
+  <button type="button" class="btn btn-primary btn-xs" (click)="GoGiris()">
     Giriş Yap
   </button>
 </div>

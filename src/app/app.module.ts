@@ -14,6 +14,7 @@ import { InputMaskModule } from '@ngneat/input-mask';
 import { TestComponent } from './components/test/test.component';
 import { StokDetayComponent } from './components/stok-detay/stok-detay.component';
 import { AsideComponent } from './components/aside/aside.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AsideComponent } from './components/aside/aside.component';
     TestComponent,
     StokDetayComponent,
     AsideComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
