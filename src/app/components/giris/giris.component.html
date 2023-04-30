@@ -1,62 +1,72 @@
-<div class="card mb-2">
-  <div class="card-header">
-    <strong>Giriş Yap</strong>
-    <app-loading class="float-right" *ngIf="Loading"></app-loading>
-  </div>
-  <div class="card-body">
-    <div class="form-group">
-      <label for="Host">Host</label>
-      <div class="input-group">
-        <input
-          (change)="HasChange($event)"
-          type="text"
-          class="form-control"
-          name="Host"
-          id="Host"
-          (keyup.enter)="Giris()"
-          [value]="Host"
-        />
-        <span class="input-group-append">
-          <a type="button" class="btn btn-primary" href=".">Tanımla</a>
-        </span>
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="card mb-2">
+      <div class="card-header">
+        <strong>Giriş Yap</strong>
+        <app-loading class="float-right" *ngIf="Loading"></app-loading>
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="Host">Host</label>
+          <div class="input-group">
+            <input
+              (change)="HasChange($event)"
+              type="text"
+              class="form-control"
+              name="Host"
+              id="Host"
+              (keyup.enter)="Giris()"
+              [value]="Host"
+            />
+            <span class="input-group-append">
+              <a type="button" class="btn btn-primary" href=".">Tanımla</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="KullaniciAdi">Kullanıcı Adı</label>
+          <input
+            (change)="HasChange($event)"
+            type="text"
+            class="form-control"
+            name="KullaniciAdi"
+            id="KullaniciAdi"
+            (keyup.enter)="Giris()"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="Sifre">Şifre</label>
+          <input
+            (change)="HasChange($event)"
+            type="password"
+            class="form-control"
+            name="Sifre"
+            id="Sifre"
+            (keyup.enter)="Giris()"
+          />
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <button
+          type="button"
+          class="btn btn-primary float-right"
+          (click)="Giris()"
+        >
+          Giriş Yap
+        </button>
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="KullaniciAdi">Kullanıcı Adı</label>
-      <input
-        (change)="HasChange($event)"
-        type="text"
-        class="form-control"
-        name="KullaniciAdi"
-        id="KullaniciAdi"
-        (keyup.enter)="Giris()"
-      />
-    </div>
-
-    <div class="form-group">
-      <label for="Sifre">Şifre</label>
-      <input
-        (change)="HasChange($event)"
-        type="password"
-        class="form-control"
-        name="Sifre"
-        id="Sifre"
-        (keyup.enter)="Giris()"
-      />
+    <div class="text-center">
+      Hesabınız yok mu?
+      <button type="button" class="btn btn-primary btn-xs" (click)="GoKayit()">
+        Kayıt Ol
+      </button>
     </div>
   </div>
-
-  <div class="card-footer">
-    <button type="button" class="btn btn-primary float-right" (click)="Giris()">
-      Giriş Yap
-    </button>
-  </div>
-</div>
-
-<div class="text-center">
-  Hesabınız yok mu?
-  <button type="button" class="btn btn-primary btn-xs" (click)="GoKayit()">
-    Kayıt Ol
-  </button>
+  <div class="col-md-3"></div>
 </div>
