@@ -36,8 +36,6 @@ export class KayitComponent {
   }
 
   async Kayit() {
-    this.Loading = true;
-
     if (
       ('' + this.formData['Ad'].trim()).length < 3 ||
       ('' + this.formData['Soyad'].trim()).length < 3 ||
@@ -48,6 +46,8 @@ export class KayitComponent {
       alert('Lütfen tüm alanları doldurun.');
       return;
     }
+
+    this.Loading = true;
 
     const Kullanici = await this.kullaniciService.Kayit(
       this.formData['Ad'],
